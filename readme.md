@@ -27,6 +27,89 @@ void main() {
 }
 ```
 
+![android顶部手机半透明黑条问题解决.png](https://user-gold-cdn.xitu.io/2019/7/21/16c14dae64c27604?w=692&h=72&f=png&s=88006)
+
 ### 2、圆角无效问题
+具体描述：
+
 使用Container包裹Column，然后设置Container圆角后，Column覆盖在Container上面导致看不到效果
-## 布局
+![设置圆角无效.png](https://user-gold-cdn.xitu.io/2019/7/21/16c14fbe82f4ac34?w=356&h=418&f=png&s=286982)
+如图所示，圆角不起效果，代码如下
+```
+Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      color: Colors.red,
+    ),
+    child: Column(
+      children: <Widget>[
+        Container(
+          child: Image.network(
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocLx-PXsc2JfxpXlkw0fe4ntirJcEdQu5NfjFy13MeZv0XMTLSA',
+            fit: BoxFit.cover,
+          ),
+        ),
+        Container(
+          child: Image.network(
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocLx-PXsc2JfxpXlkw0fe4ntirJcEdQu5NfjFy13MeZv0XMTLSA',
+            fit: BoxFit.fill,
+          ),
+        ),
+      ],
+    ),
+  ),
+```
+解决如下：使用PhysicalModel替换Container或者包裹在Container外层 解决圆角问题
+```
+PhysicalModel(
+  color: Colors.transparent,
+  borderRadius: BorderRadius.circular(10), // 圆角
+  clipBehavior: Clip.antiAlias, // 剪辑子组件行为
+  child: Column(
+      children: <Widget>[
+        Container(
+          child: Image.network(
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocLx-PXsc2JfxpXlkw0fe4ntirJcEdQu5NfjFy13MeZv0XMTLSA',
+            fit: BoxFit.cover,
+          ),
+        ),
+        Container(
+          child: Image.network(
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocLx-PXsc2JfxpXlkw0fe4ntirJcEdQu5NfjFy13MeZv0XMTLSA',
+            fit: BoxFit.fill,
+          ),
+        ),
+      ],
+    ),
+)
+```
+![设置圆角无效-解决.png](https://user-gold-cdn.xitu.io/2019/7/21/16c1506338f65756?w=380&h=416&f=png&s=288070)
+
+### 3、横竖屏问题
+* 强制横屏
+
+setPreferredOrientations方法返回的是一个Future，为防止配置还未生效就执行runApp，把runApp放到then后
+```
+import 'package:flutter/services.dart' show SystemChrome, DeviceOrientation;
+
+void main() {
+  // 强制屏幕横屏
+  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight])
+      .then((value) {
+    runApp(MyApp());
+  });
+}
+```
+* 强制竖屏
+```
+import 'package:flutter/services.dart' show SystemChrome, DeviceOrientation;
+
+void main() {
+  // 强制屏幕竖屏
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
+      .then((value) {
+    runApp(MyApp());
+  });
+}
+```
+<!--## 布局-->
