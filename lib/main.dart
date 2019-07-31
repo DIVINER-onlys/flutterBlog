@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show SystemUiOverlayStyle, SystemChrome;
 import 'dart:io' show Platform;
 
+import 'package:flutter_blog/store/index.dart';
 import 'package:flutter_blog/view/Tab/BaseTabBar.dart' show BaseTabBarPage;
 
 void main() {
@@ -18,16 +19,17 @@ void main() {
 class FlutterBlog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'FlutterBlog',
-      theme: ThemeData(
-        primaryColor: Colors.red,
-        indicatorColor: Colors.red
-      ),
-      home: Builder(
-        builder: (context) {
-          return BaseTabBarPage();
-        },
+    return Store.init(
+      context: context,
+      child: MaterialApp(
+        title: 'FlutterBlog',
+        theme: ThemeData(primaryColor: Colors.red, indicatorColor: Colors.red),
+        home: Builder(
+          builder: (context) {
+            Store.context = context;
+            return BaseTabBarPage();
+          },
+        ),
       ),
     );
   }
