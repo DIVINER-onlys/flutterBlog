@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_blog/router/index.dart' show Router;
-import 'package:flutter_blog/view/Demo/views/PopupDemo.dart' show PopupDemo;
+import 'package:flutter_blog/view/Demo/views/PopupDemo/PopupDemo.dart' show PopupDemo;
 
 class Demo extends StatelessWidget {
   @override
