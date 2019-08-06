@@ -178,21 +178,21 @@ show 方法无非做了 2 件事：
 
 这里看下初步实现效果：
 
-![初步效果](https://km.yy.com/uploads/image/image-1564461044-%E4%BC%98%E5%8C%96%E5%89%8D.gif)
+![初步效果](https://user-gold-cdn.xitu.io/2019/8/6/16c670622a8b6ccd?w=360&h=240&f=gif&s=559713)
 
 ## 优化
 细心的同学可以很容易会发现，每次拖拽动作的开始，结束的时候，view 的旋转动画都会被重置，体验并不友好。看了下日志就知道，在这两个时刻, 都会触发 view 的重建和销毁：
-![](https://km.yy.com/uploads/image/image-1564461001-%E4%BC%98%E5%8C%96%E7%AD%BElog.png)
+![](https://user-gold-cdn.xitu.io/2019/8/6/16c670622ab87860?w=1472&h=626&f=png&s=114566)
 
 
 ## ignoringFeedbackSemantics
 文档提示我们，当 Draggable 的 child跟feedback相同时， ignoringFeedbackSemantics = false ，与 GlobalKey 配合使用，可以让 feedback 在 child 切换时，所对应 widget 不被 销毁 和 重新创建，这样设置后，再看下日志
-![](https://km.yy.com/uploads/image/image-1564461147-%E4%BC%98%E5%8C%96%E5%90%8Elog.png)
+![](https://user-gold-cdn.xitu.io/2019/8/6/16c6705c866ab618?w=1278&h=554&f=png&s=89610)
 
 onDragStated,onDragEnd,虽然也触发了 MiniRoomFloatingWidget 的 build 方法，但并没有销毁及重创建。
 
 在来看下优化后的效果：
-![](https://km.yy.com/uploads/image/image-1564461330-%E4%BC%98%E5%8C%96%E5%90%8E.gif)
+![](https://user-gold-cdn.xitu.io/2019/8/6/16c6706d2cdac90d?w=360&h=240&f=gif&s=767938)
 
 
 ## 最后附上代码
