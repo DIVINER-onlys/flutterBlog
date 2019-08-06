@@ -3,7 +3,7 @@
 
 ## 文章
 * [flutter自定义Dialog样式，实现自定义Popupmenu #1](https://github.com/DIVINER-onlys/flutterBlog/issues/1)
-
+* [Flutter 实战系列: 实现顶级视图可拖动悬浮窗 #2](https://github.com/DIVINER-onlys/flutterBlog/issues/2)
 ## 未解决问题
 ### 1、ios键盘调起白屏问题
 描述： 输入框在屏幕最底部，在ios端点击输入框调起键盘时，输入框被推起（正常想要的结果），但是键盘在滑动过程中在键盘出现位置会先出现白屏
