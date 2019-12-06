@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart'
     show ChangeNotifierProvider, MultiProvider, Consumer, Provider;
 
+import 'model/index.dart';
+export 'model/index.dart';
+
+
 class Store {
   static BuildContext context;
 
   static init({context, child}) {
     return MultiProvider(
       // TODO 抽离
-      providers: [],
+      providers: [
+        ChangeNotifierProvider(builder: (_) => IMSimpleModel()),
+      ],
       child: child,
     );
   }

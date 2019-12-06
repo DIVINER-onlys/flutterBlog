@@ -12,6 +12,8 @@ import 'package:flutter_blog/view/Demo/views/CanvasDemo/testCanvas.dart'
     show CustomPaintRoute;
 import 'package:flutter_blog/view/Demo/views/CanvasDemo/camera.dart'
     show CameraApp;
+import 'package:flutter_blog/view/Demo/views/ImSimple/ImSimple.dart'
+    show IMSimpleWidget;
 
 class Demo extends StatelessWidget {
   @override
@@ -55,6 +57,27 @@ class Demo extends StatelessWidget {
               onTap: () {
                 Router.push(
                   CustomPaintRoute(),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('IMSimpleWidget'),
+              trailing: Icon(Icons.chevron_right),
+              onTap: () {
+                List<Map> charList = [
+                  {
+                    "avatar": 'http://img.wxcha.com/file/201809/11/edcd6280cb.jpg',
+                    "nickname": '曾系猪'
+                  },
+                  {
+                    "avatar": 'https://tu1.whhost.net/uploads/20181103/15/1541230078-kmcrQJCypG.jpg',
+                    "nickname": '林系猫'
+                  },
+                  
+                  
+                ];
+                Router.push(
+                  IMSimpleWidget(charList: charList),
                 );
               },
             ),
