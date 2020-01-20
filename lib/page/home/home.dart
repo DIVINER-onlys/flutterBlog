@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:flutter_blog/view/Demo/Demo.dart' show Demo;
-import 'package:flutter_blog/view/Personal/Personal.dart' show Personal;
+import 'package:flutter_blog/page/demo/demo.dart' show Demo;
+import 'package:flutter_blog/page/personal/personal.dart' show Personal;
 
-class BaseTabBarPage extends StatefulWidget {
+class Home extends StatefulWidget {
   @override
-  _BaseTabBarPageState createState() => _BaseTabBarPageState();
+  _HomeState createState() => _HomeState();
 }
 
-class _BaseTabBarPageState extends State<BaseTabBarPage> {
+class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   List<Widget> subPages = List<Widget>();
@@ -24,12 +24,8 @@ class _BaseTabBarPageState extends State<BaseTabBarPage> {
     return Text(title);
   }
 
-  Image _getTabBarNomalImage(String normalImage) {
-    return Image.asset(normalImage, width: 24, height: 24);
-  }
-
-  Image _getTabBarSelectedImage(String selectedImage) {
-    return Image.asset(selectedImage, width: 24, height: 24);
+  Image _getTabBarImage(String imageUrl) {
+    return Image.asset(imageUrl, width: 24, height: 24);
   }
 
   @override
@@ -47,15 +43,15 @@ class _BaseTabBarPageState extends State<BaseTabBarPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: _getTabBarNomalImage('assets/Tab/discover-normal.png'),
+            icon: _getTabBarImage('assets/Tab/discover-normal.png'),
             activeIcon:
-                _getTabBarSelectedImage('assets/Tab/discover-selected.png'),
+            _getTabBarImage('assets/Tab/discover-selected.png'),
             title: _getTabBarText('实验室', 1),
           ),
           BottomNavigationBarItem(
-            icon: _getTabBarNomalImage('assets/Tab/profile-normal.png'),
+            icon: _getTabBarImage('assets/Tab/profile-normal.png'),
             activeIcon:
-                _getTabBarSelectedImage('assets/Tab/profile-selected.png'),
+            _getTabBarImage('assets/Tab/profile-selected.png'),
             title: _getTabBarText('我的', 2),
           ),
         ],

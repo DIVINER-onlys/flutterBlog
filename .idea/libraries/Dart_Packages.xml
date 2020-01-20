@@ -124,6 +124,13 @@
             </list>
           </value>
         </entry>
+        <entry key="oktoast">
+          <value>
+            <list>
+              <option value="/Applications/flutter/.pub-cache/hosted/pub.dartlang.org/oktoast-2.3.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="path">
           <value>
             <list>
@@ -287,6 +294,7 @@
       <root url="file:///Applications/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.5/lib" />
       <root url="file:///Applications/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.1.6/lib" />
       <root url="file:///Applications/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.1.7/lib" />
+      <root url="file:///Applications/flutter/.pub-cache/hosted/pub.dartlang.org/oktoast-2.3.0/lib" />
       <root url="file:///Applications/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.6.2/lib" />
       <root url="file:///Applications/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.6.4/lib" />
       <root url="file:///Applications/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-0.5.0+1/lib" />

@@ -5,13 +5,17 @@ import 'package:provider/provider.dart'
 import 'model/index.dart';
 export 'model/index.dart';
 
-
 class Store {
   static BuildContext context;
 
-  static init({context, child}) {
+  static of([BuildContext context]) {
+    Store.context ??= context;
+    return context;
+  }
+
+  static init({child, context}) {
+    Store.context ??= context;
     return MultiProvider(
-      // TODO 抽离
       providers: [
         ChangeNotifierProvider(builder: (_) => IMSimpleModel()),
       ],

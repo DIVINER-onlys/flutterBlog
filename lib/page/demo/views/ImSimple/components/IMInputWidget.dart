@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_blog/view/Demo/views/ImSimple/theme/theme.dart';
+import 'package:flutter_blog/page/Demo/views/ImSimple/theme/theme.dart';
 
-import 'package:flutter_blog/store/index.dart';
+import 'package:flutter_blog/store/store.dart';
 import 'package:flutter_blog/store/object/IMItemObject.dart';
 import 'package:flutter_blog/store/object/IMItemObject.dart'
     show IMItemType, MsgStatus, IMItemObject;

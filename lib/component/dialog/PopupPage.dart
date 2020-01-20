@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blog/store/index.dart' show Store;
+import 'package:flutter_blog/store/store.dart' show Store;
 
 class PopupWidget {
   // 展示一个透明路由层

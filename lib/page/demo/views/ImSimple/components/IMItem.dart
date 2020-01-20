@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_blog/view/Demo/views/ImSimple/theme/theme.dart';
+import 'package:flutter_blog/page/Demo/views/ImSimple/theme/theme.dart';
 import './TextMsg.dart' show TextMsg;
 import './System.dart' show System;
 import 'package:flutter_blog/store/object/IMItemObject.dart'

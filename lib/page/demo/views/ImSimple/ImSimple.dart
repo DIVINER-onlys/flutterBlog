@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:znovel_flutter/store/object/IMSession.dart';
 // import 'package:znovel_flutter/view//im/components/IMItem.dart';
 // import 'package:znovel_flutter/view/IM/IMMore.dart';
-import 'package:flutter_blog/view/Demo/views/ImSimple/theme/theme.dart';
+import 'package:flutter_blog/page/Demo/views/ImSimple/theme/theme.dart';
 import './components/IMInputWidget.dart' show IMInputWidget;
 import './components/IMAppBar.dart' show IMAppBar;
 import 'package:provider/provider.dart';

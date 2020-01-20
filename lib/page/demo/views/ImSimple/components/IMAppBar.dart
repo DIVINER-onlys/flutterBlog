@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import 'package:flutter_blog/view/Demo/views/ImSimple/theme/theme.dart';
+import 'package:flutter_blog/page/Demo/views/ImSimple/theme/theme.dart';
 import 'package:flutter_blog/store/model/index.dart';
 
 AppBar IMAppBar(BuildContext context, List<Map> charList, {ImTheme theme}) {
