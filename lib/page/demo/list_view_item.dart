@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_blog/router/router.dart' show Router;
+
 class ListViewItem extends StatelessWidget {
   final String itemUrl;
   final String itemTitle;
   final String data;
+  final String routerUrl;
 
   ListViewItem({
     this.itemUrl,
     this.itemTitle,
     this.data,
+    this.routerUrl,
   });
 
   @override
@@ -18,7 +22,9 @@ class ListViewItem extends StatelessWidget {
       elevation: 4.0,
       margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       child: ListTile(
-        onTap: () {},
+        onTap: () {
+          Router.push(routerUrl);
+        },
         title: Padding(
           child: Text(
             itemTitle,

@@ -5,7 +5,7 @@ import 'package:flutter_blog/page/context_provider/context_provider.dart'
     show ContextProvider, ContextMap;
 import 'package:flutter_blog/page/page_not_found.dart' show PageNotFound;
 import 'package:flutter_blog/router/router_observer.dart' show RouterObserver;
-import 'package:flutter_blog/config/router_config/router_config.dart' show HomeRouter;
+import 'package:flutter_blog/config/router_config/router_config.dart' show HomeRouter, DemoRouter;
 
 class Router {
   // 路由 pushNamed 时调用
@@ -16,6 +16,7 @@ class Router {
     Map<String, WidgetBuilder> allRouteNameConfig = {};
 
     allRouteNameConfig.addAll(HomeRouter.routerNameConfig);
+    allRouteNameConfig.addAll(DemoRouter.routerNameConfig);
 
     WidgetBuilder builderWidget = allRouteNameConfig[settings.name];
     return CupertinoPageRoute(

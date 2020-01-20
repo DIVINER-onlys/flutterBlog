@@ -23,9 +23,10 @@ class Demo extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           ListViewItem(
-            itemTitle: 'ssss',
+            itemTitle: 'PopupWidget',
             itemUrl: 'ssssss',
-            data: 'sdsfsdfd',
+            data: 'PopupWidget',
+            routerUrl: '/popupdemo',
           ),
         ],
       ),
